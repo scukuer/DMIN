@@ -65,6 +65,9 @@ class DMIN(tf.keras.Model):
         output = self.seq_model(output)    # [batch, 1]
         return output
 
+    def get_aux_loss(self):
+        return self.brl.get_aux_loss()
+
 
 def debug():
     his_length = 8
